@@ -2,9 +2,9 @@ import glob
 import os
 import pandas as pd
 
-src = r'D:\Mestrado\databases\UCF101\raw'
+src = r'/media/coala/HD/Mestrado/databases/UCF101/raw/'
 # Dst path for config files
-dst = r'D:\Mestrado\databases\UCF101'
+dst = r'/home/coala/mestrado/datasets/UCF101/'
 
 classes = glob.glob(os.path.join(src, '*'))
 classes.sort()

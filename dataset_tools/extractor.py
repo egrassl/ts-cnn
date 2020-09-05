@@ -168,13 +168,16 @@ class Extractor(object):
 
 
 if __name__ == '__main__':
+
+    from dataset_tools.ucf_definitions import UcfDefinitions as ucf
+
     extractor = Extractor(
-        src=r'D:\Mestrado\databases\UCF101\raw-test',
-        dst=r'D:\Mestrado\databases\UCF101\test',
-        annotations=r'D:\Mestrado\databases\UCF101\samples_annotations.csv',
+        src=r'/home/coala/mestrado/datasets/UCF101/raw/',
+        dst=r'/home/coala/mestrado/datasets/UCF101/split01/',
+        annotations=r'/home/coala/mestrado/datasets/UCF101/samples_annotations.csv',
         nb_frames=10,
         chunks=5,
-        split_func=lambda x: 'train' if random.uniform(0, 1) < .7 else 'val',
+        split_func=ucf.get_split,
         spatial=True,
         temporal=True,
         verbose=True
