@@ -1,0 +1,14 @@
+# Fine tunes whole model on UCF101
+
+dataset: 'path to dataset'
+classes: 'path to classes file'
+annotations: 'path to annotations'
+n_classes: 101
+epochs: 300
+batch_size: 32
+train_only_last: True
+learn_rate: 1e-3
+l2_reg: 1e-5
+dropout: 0.5
+momentum: 0.9
+weights: 'imagenet'

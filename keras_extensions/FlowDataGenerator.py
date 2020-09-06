@@ -13,6 +13,7 @@ class MotionFlowDataGenerator(CustomDataGenerator.CustomDataGenerator):
         img = imread(img_path)
         img = keras.preprocessing.image.img_to_array(img)
         img = self.augmentation.apply_transform(img, transform) if transform is not None else img
+        img = img - np.mean(img)
         img = resize(img, (self.input_shape[0], self.input_shape[1]))
         return img * (1.0/255.0)
 

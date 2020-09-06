@@ -73,6 +73,7 @@ class CustomDataGenerator(Sequence):
         # transform result in batch like ndarray and makes y hot encoded
         x = np.array([r[0] for r in result])
         y = to_categorical([r[1] for r in result], num_classes=len(self.classes))
+        assert y.shape[0] == len(self.classes)
 
         return x, y
 
