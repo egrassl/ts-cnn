@@ -109,14 +109,12 @@ def VGG16(name, input_shape, classes: int, dropout: float, l2_reg: float, weight
                       activation='relu',
                       padding='same',
                       name='block5_conv1',
-                      kernel_regularizer=regularizers.l2(l2_reg),
-                      trainable=trainable)(x)
+                      kernel_regularizer=regularizers.l2(l2_reg))(x)
     x = layers.Conv2D(512, (3, 3),
                       activation='relu',
                       padding='same',
                       name='block5_conv2',
-                      kernel_regularizer=regularizers.l2(l2_reg),
-                      trainable=trainable)(x)
+                      kernel_regularizer=regularizers.l2(l2_reg))(x)
     x = layers.Conv2D(512, (3, 3),
                       activation='relu',
                       padding='same',
