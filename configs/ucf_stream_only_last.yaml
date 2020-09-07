@@ -1,14 +1,14 @@
 # Trains on UCF101 with all layers frozen except the last convolutional and dense ones
 
-dataset: 'path to dataset'
-classes: 'path to classes file'
-annotations: 'path to annotations'
+dataset: '/home/coala/mestrado/datasets/UCF101/split01/'
+classes: '/home/coala/mestrado/datasets/UCF101/classes_index.csv'
+annotations: '/home/coala/mestrado/datasets/UCF101/split01/frame_info.csv'
 n_classes: 101
 epochs: 300
 batch_size: 32
 train_only_last: True
-learn_rate: 1e-3
-l2_reg: 1e-4
-dropout: 0.5
+learn_rate: 0.001
+l2_reg: 0.0005
+dropout: 0.85
 momentum: 0.9
 weights: 'imagenet'

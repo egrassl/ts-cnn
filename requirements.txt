@@ -5,3 +5,4 @@ pandas
 opencv
 matplotlib
 scikit-image
+h5py

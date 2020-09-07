@@ -13,8 +13,8 @@ fig, axs = plt.subplots(1, 2)
 
 # Plot accuracies
 axs[0].set_title('Accuracy')
-axs[0].plot(history['acc'])
-axs[0].plot(history['val_acc'])
+axs[0].plot(history['accuracy'])
+axs[0].plot(history['val_accuracy'])
 axs[0].legend(['train', 'validation'], loc='upper left')
 axs[0].set(ylabel='accuracy', xlabel='epoch')
 

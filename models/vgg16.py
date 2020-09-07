@@ -11,7 +11,7 @@ import os
 import h5py
 import numpy as np
 import tensorflow.keras.backend as K
-from tensorflow.python.keras.engine.saving import load_attributes_from_hdf5_group
+from keras.engine.saving import load_attributes_from_hdf5_group
 
 
 def VGG16(name, input_shape, classes: int, dropout: float, l2_reg: float, weights, train_only_last=False, include_top=False, pooling=None):

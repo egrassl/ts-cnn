@@ -59,9 +59,9 @@ if __name__ == '__main__':
     )
 
     train_set = MotionFlowDataGenerator(
-        r'D:\Mestrado\databases\UCF101\test',
-        r'D:\Mestrado\databases\UCF101\test\frame_info.csv',
-        r'D:\Mestrado\databases\UCF101\classes_index.csv',
+        r'/home/coala/mestrado/datasets/UCF101/split01/',
+        r'/home/coala/mestrado/datasets/UCF101/split01/frame_info.csv',
+        r'/home/coala/mestrado/datasets/UCF101/classes_index.csv',
         10,
         16,
         (224, 224, 20),
@@ -70,9 +70,9 @@ if __name__ == '__main__':
     )
 
     val_set = MotionFlowDataGenerator(
-        r'D:\Mestrado\databases\UCF101\test',
-        r'D:\Mestrado\databases\UCF101\test\frame_info.csv',
-        r'D:\Mestrado\databases\UCF101\classes_index.csv',
+        r'/home/coala/mestrado/datasets/UCF101/split01/',
+        r'/home/coala/mestrado/datasets/UCF101/split01/frame_info.csv',
+        r'/home/coala/mestrado/datasets/UCF101/classes_index.csv',
         10,
         16,
         (224, 224, 20),
@@ -83,11 +83,12 @@ if __name__ == '__main__':
     model = VGG16(
         'temporal',
         input_shape=(224, 224, 20),
-        classes=3,
+        classes=101,
         dropout=0.9,
         l2_reg=1e-5,
-        weights=None,
-        include_top=True
+        weights='imagenet',
+        include_top=True,
+        train_only_last=False
     )
 
     model.summary()

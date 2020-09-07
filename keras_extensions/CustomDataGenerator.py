@@ -68,16 +68,16 @@ class CustomDataGenerator(Sequence):
 
         # Gets samples indexes
         indexes = [i for i in range(index * self.batch_size, (index + 1) * self.batch_size)]
-        result = [self.__get_sample(i) for i in indexes]
+        result = [self.get_sample(i) for i in indexes]
 
         # transform result in batch like ndarray and makes y hot encoded
         x = np.array([r[0] for r in result])
         y = to_categorical([r[1] for r in result], num_classes=len(self.classes))
-        assert y.shape[0] == len(self.classes)
+        assert y.shape[1] == len(self.classes)
 
         return x, y
 
-    def __get_sample(self, index):
+    def get_sample(self, index):
 
         sample_name = self.annotations[index]['sample']
         class_name = self.annotations[index]['class']

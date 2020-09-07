@@ -140,18 +140,19 @@ optimizer = optimizers.SGD(lr=configs['learn_rate'], momentum=configs['momentum'
 model.compile(
     optimizer=optimizer,
     loss='categorical_crossentropy',
-    metrics=['accuracy', 'top_k_categorical_accuracy']
+    #metrics=['accuracy', 'top_k_categorical_accuracy'],
+    metrics=['accuracy']
 )
 
 # Train model
-history = model.model.fit_generator(
+history = model.fit_generator(
     train_set,
     validation_data=val_set,
     verbose=1,
     epochs=configs['epochs'],
     callbacks=callbacks,
     use_multiprocessing=True,
-    workers=8
+    workers=5
 )
 
 
