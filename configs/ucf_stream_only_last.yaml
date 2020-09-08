@@ -9,6 +9,6 @@ batch_size: 32
 train_only_last: True
 learn_rate: 0.001
 l2_reg: 0.0005
-dropout: 0.85
+dropout: 0.5
 momentum: 0.9
 weights: 'imagenet'
