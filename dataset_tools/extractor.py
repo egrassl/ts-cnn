@@ -169,7 +169,8 @@ class Extractor(object):
 
 if __name__ == '__main__':
 
-    from dataset_tools.ucf_definitions import UcfDefinitions as ucf
+    # from dataset_tools.ucf_definitions import UcfDefinitions as ucf
+    from dataset_tools.ntu_home_definitions import NtuDefinitions as ntu
 
     extractor = Extractor(
         src=r'/home/coala/mestrado/datasets/UCF101/raw/',
@@ -177,7 +178,7 @@ if __name__ == '__main__':
         annotations=r'/home/coala/mestrado/datasets/UCF101/samples_annotations.csv',
         nb_frames=10,
         chunks=5,
-        split_func=ucf.get_split,
+        split_func=ntu.get_cs_split,
         spatial=True,
         temporal=True,
         verbose=True
