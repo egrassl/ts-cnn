@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('name', type=str, metavar='model_name', help='Name that will be used in this model')
 parser.add_argument('type', type=str, metavar='stream_type', choices=['s', 't', 'st'], help='CNN stream type')
 parser.add_argument('config', type=str, metavar='config_file', help='Config file path')
-parser.add_argument('--gpu', type=int, metavar='gpu_id', help='Specifies a GPU to run the application')
+parser.add_argument('--gpu', type=str, metavar='gpu_id', help='Specifies a GPU to run the application')
 
 args = parser.parse_args()
 
